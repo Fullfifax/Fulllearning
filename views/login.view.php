@@ -23,7 +23,7 @@ require_once("includes/_nav.php");
                 <input type="password" class="form-control ml-3 mb-4 col-md-4" name="password" placeholder="Password">
                 
                 <div class="col-md-8"></div>
-                <button type="submit" class="btn btn-lg btn-primary btn-block ml-3 col-md-4" name="register">Sign-in</button>
+                <button type="submit" class="btn btn-lg btn-block ml-3 col-md-4" name="register" style="background-color:grey;">Sign-in</button>
                 
                 <div class="col-md-8 mt-3">
                     <h6>If you don't have an account,
