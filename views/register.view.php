@@ -43,7 +43,7 @@ require_once("includes/_nav.php");
                 <input type="password"class="form-control ml-3 mb-4 col-md-4" name="password_confirm" placeholder="Confirm your password">
                 
                 <div class="col-md-8"></div>
-                <button type="submit" class="btn btn-lg btn-primary btn-block ml-3 col-md-4" name="register">Sign-up</button>
+                <button type="submit" class="btn btn-lg btn-block ml-3 col-md-4" name="register" style="background-color:grey;">Sign-up</button>
                 
                 <div class="col-md-8 mt-3">
                         <h6>If you have already an account,
