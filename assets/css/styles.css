@@ -1,0 +1,19 @@
+.container{
+    margin-top: 12px;
+}
+
+.btn{
+    margin-right: 20px;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.container{
+    margin-top: 70px;
+}
+
