@@ -3,8 +3,6 @@ require_once("includes/_header.php");
 require_once("includes/_nav.php");
 ?>
 
-<body>
-
     <div class="container">
 
     <div class="jumbotron p-3 p-md-5 text-white bg-dark">
