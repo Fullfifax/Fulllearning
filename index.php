@@ -3,7 +3,6 @@ require("includes/constants.php");
 require_once("includes/_header.php"); 
 require_once("includes/_nav.php");
 ?>
-<body>
 
     <div class="jumbotron p-3 p-md-5 text-white bg-dark">
         <div class="col-md-6 px-0">
