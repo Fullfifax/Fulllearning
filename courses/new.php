@@ -1,10 +1,42 @@
 <?php 
 session_start();
 $_SESSION['user_id'] = 'user';
+
 require_once("../includes/constants.php");
 require_once("../config/database.php");
 require_once("../includes/_header.php");
 require_once("../includes/_nav.php");
+
+if($_POST){                  
+    
+    $filename = '';
+
+    if(!empty($_FILES['file'])){
+
+        // Le chemin du depot du fichier uploadé
+        $targetDirectory = '../uploads/';
+        $file = $_FILES['file']['name'];
+
+        $path = pathinfo($file);
+        $filename = $path['filename'];
+        $ext = $path['extension'];
+
+        $tmpName = $_FILES['file']['tmp_name'];
+        $path_filename_ext = $targetDirectory.$filename.'.'.$ext;
+        if(move_uploaded_file($tmpName, $path_filename_ext)){
+            $filename = $filename.'.'.$ext;
+        }
+
+    }
+
+    $sql = "INSERT INTO cours (nom, fichier, information, matiere_id) VALUES (?, ?, ?, ?)";
+    $a = $pdo->prepare($sql)->execute([$_POST['name'], $filename, $_POST['information'], $_POST['matiere']]);
+
+}
+
+$stm = $pdo->query("SELECT id, nom FROM matiere");
+
+$matieres = $stm->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
         
@@ -27,11 +59,11 @@ require_once("../includes/_nav.php");
                     </div>
 
                     <div class="form-group">
-                        <label for="name">Category</label>
-                        <select class="form-control" name="category" id="category">
-                            <?php foreach($categories as $c){ ?>
-                                <option value="<?= $c['id'] ?>">
-                                    <?= $c['name']; ?>
+                        <label for="name">Subjects</label>
+                        <select class="form-control" name="matiere" id="matiere">
+                            <?php foreach($matieres as $mat){ ?>
+                                <option value="<?= $mat['id'] ?>">
+                                    <?= $mat['nom']; ?>
                                 </option>
                             <?php } ?>
                         </select>
@@ -42,7 +74,7 @@ require_once("../includes/_nav.php");
                         <input type="file" class="form-control-file" name="file" id="file">
                     </div>
                     <button type="submit" class="btn" style="background-color: grey">Add</button>
-                    
+
                 </form>
                 
             </div>
