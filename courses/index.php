@@ -13,54 +13,29 @@ require_once('../config/database.php');
 require_once("../includes/_header.php"); 
 require_once("../includes/_nav.php");
 
+$stm = $pdo->query("SELECT id, nom, fichier, information FROM cours");
+$rows = $stm->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <div class="container">
 
     <div class="row mb-2">
-        
-        <div class="col-md-6">
-            
-            <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-success">Cours n°1</strong>
-                    <h3 class="mb-0">
-                        <a class="text-dark" href="#">PHP: Variables</a>
-                    </h3>
-                    <div class="mb-1 text-muted">12 mey</div>
-                        <p class="card-text mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="btn btn-dark mt-2">
-                            <a href="#" class="p-2 text-light">Continue reading</a>
-                        </button>
-                    </div>
-                    <img class="card-img-right flex-auto d-none d-lg-block" src="../assets/images/home1.png" alt="Cours1" width="200px">
+
+    <?php foreach($rows as $row){ ?>
+
+        <div class="col-sm-6 mb-4">
+            <div class="card bg-dark text-light">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $row['nom']; ?></h5>
+                    <p class="card-text"><?= $row['information']; ?></p>
+                    <a href="show.php?id=<?=$row['id'];?>" class="btn btn-light text-dark">Show more</a>
                 </div>
             </div>
-            
-
-            <div class="col-md-6">
-
-                <div class="card flex-md-row mb-4 shadow-sm h-md-250">
-                    <div class="card-body d-flex flex-column align-items-start">
-                    <strong class="d-inline-block mb-2 text-success">Cours n°1</strong>
-                        <h3 class="mb-0">
-                            <a class="text-dark" href="#">PHP: Variables</a>
-                        </h3>
-                        <div class="mb-1 text-muted">12 mey</div>
-                            <p class="card-text mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            <button class="btn btn-dark mt-2">
-                                <a href="#" class="p-2 text-light">Continue reading</a>
-                            </button>
-                            
-                        </div>
-                        <img class="card-img-right flex-auto d-none d-lg-block" src="../assets/images/home1.png" alt="Cours1" width="200px">
-                    </div>
-                </div>
-
-            </div>
-
         </div>
 
+    <?php } ?>
+        
     </div>
     
 </div>
