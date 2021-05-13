@@ -1,9 +1,11 @@
 <?php 
 session_start();
-$_SESSION['user_id'] = 'user';
+
+include("../filters/teacher_filter.php");
 
 require_once("../includes/constants.php");
 require_once("../config/database.php");
+require("../includes/functions.php");
 require_once("../includes/_header.php");
 require_once("../includes/_nav.php");
 
