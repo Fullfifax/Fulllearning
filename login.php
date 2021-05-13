@@ -47,7 +47,7 @@ $verifyUserError = "";
 
                 if(password_verify($_POST['password'], $user['password'])){
                     $_SESSION['user_id'] = $user['id_ens'];
-                    header("Location: courses/index.php");
+                    header('Location: courses/index.php?id='.$user['id_ens']);
                     exit();
                 } else {
                     $verifyUserError = "Vérifiez votre username ou mot de passe !";
