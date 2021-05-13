@@ -1,13 +1,8 @@
 <?php 
 session_start();
 
-$_SESSION['user_id'] = 'user';
-if(!isset($_SESSION['user_id'])){
-    if(strpos($_SERVER['REQUEST_URI'], 'courses') !== false){
-        header("Location: ../login.php");
-        exit();
-    }
-}
+$_SESSION['user_id'] = '?'.$_SERVER['QUERY_STRING'];
+
 require("../includes/constants.php");
 require_once('../config/database.php');
 require_once("../includes/_header.php"); 
