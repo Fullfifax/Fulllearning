@@ -44,6 +44,7 @@ require_once("includes/_nav.php");
                         <em><a href="register.php" style="color:white;">register here :)</a></em>
                     </h6>
                 </div>
+                
             </div> 
 
         </form>
