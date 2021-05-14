@@ -47,6 +47,8 @@ $verifyUserError = "";
 
                 if(password_verify($_POST['password'], $user['password'])){
                     $_SESSION['user_id'] = $user['id_ens'];
+                    session_start();
+                    $_SESSION['username'] = $_POST['username'];
                     header('Location: courses/index.php?id='.$user['id_ens']);
                     exit();
                 } else {
@@ -63,6 +65,7 @@ $verifyUserError = "";
 
                 if(password_verify($_POST['password'], $user['password'])){
                     $_SESSION['user_id'] = $user['id_etu'];
+                    session_start();
                     header("Location: courses/index.php");
                     exit();
                 } else {
