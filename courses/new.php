@@ -50,19 +50,19 @@ $matieres = $stm->fetchAll(PDO::FETCH_ASSOC);
 
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" name="name" id="name">
+                        <input type="text" class="form-control" name="name" id="name" required>
                     </div>
 
                     <div class="form-group">
                         <label for="price">Description</label>
                         <div class="input-group">
-                            <textarea class="form-control" aria-label="With textarea" name="information" id="information"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" name="information" id="information" required></textarea>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="name">Subjects</label>
-                        <select class="form-control" name="matiere" id="matiere">
+                        <select class="form-control" name="matiere" id="matiere" required>
                             <?php foreach($matieres as $mat){ ?>
                                 <option value="<?= $mat['id'] ?>">
                                     <?= $mat['nom']; ?>
@@ -73,7 +73,7 @@ $matieres = $stm->fetchAll(PDO::FETCH_ASSOC);
 
                     <div class="form-group">
                         <label for="file">File</label>
-                        <input type="file" class="form-control-file" name="file" id="file">
+                        <input type="file" class="form-control-file" name="file" id="file" required>
                     </div>
                     <button type="submit" class="btn" style="background-color: grey">Add</button>
 
