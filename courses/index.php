@@ -1,7 +1,8 @@
 <?php 
 session_start();
 
-$_SESSION['user_id'] = '?'.$_SERVER['QUERY_STRING'];
+
+include("../filters/teacher_filter.php");
 
 require("../includes/constants.php");
 require_once('../config/database.php');
