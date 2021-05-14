@@ -1,7 +1,6 @@
 <?php 
 session_start();
 
-
 include("../filters/teacher_filter.php");
 
 require("../includes/constants.php");
@@ -26,6 +25,7 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                     <h5 class="card-title"><?= $row['nom']; ?></h5>
                     <p class="card-text"><?= $row['information']; ?></p>
                     <a href="show.php?id=<?=$row['id'];?>" class="btn btn-light text-dark">Show more</a>
+                    <a href="delete.php?id=<?= $row['id']; ?>" class="btn btn-danger text-light ml-4">Delete</a>
                 </div>
             </div>
         </div>
