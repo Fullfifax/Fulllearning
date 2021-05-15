@@ -40,7 +40,7 @@ $verifyUserError = "";
 
 
             // Vérifie si le compte existe           
-            if(isset($user) && $user == "teacher"){
+            if(isset($user) && $user == "teacher") {
 
                 $stm = $pdo->query("SELECT id_ens, password FROM enseignant WHERE username ='".$_POST['username']."'");
                 $user = $stm->fetch(PDO::FETCH_ASSOC);
@@ -56,9 +56,7 @@ $verifyUserError = "";
                     $errors[] = $verifyUserError;
                 }
 
-            }
-            
-            if(isset($user) && $user == "student"){
+            } else if(isset($user) && $user == "student") {
                     
                 $stm = $pdo->query("SELECT id_etu, password FROM etudiant WHERE username ='".$_POST['username']."'");
                 $user = $stm->fetch(PDO::FETCH_ASSOC);
@@ -66,7 +64,8 @@ $verifyUserError = "";
                 if(password_verify($_POST['password'], $user['password'])){
                     $_SESSION['user_id'] = $user['id_etu'];
                     session_start();
-                    header("Location: courses/index.php");
+                    $_SESSION['username'] = $_POST['username'];
+                    header('Location: courses/index.php?id='.$user['id_etu']);
                     exit();
                 } else {
                     $verifyUserError = "Vérifiez votre username ou mot de passe !";
