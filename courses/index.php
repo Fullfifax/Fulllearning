@@ -2,6 +2,9 @@
 session_start();
 
 include("../filters/teacher_filter.php");
+include("../filters/student_filter.php");
+
+var_dump($_SESSION);
 
 require("../includes/constants.php");
 require_once('../config/database.php');
