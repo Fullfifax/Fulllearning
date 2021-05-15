@@ -21,14 +21,33 @@ if($_GET){
 
 <main role="main">
 
-    <div class="container">
+    <div class="container bg-dark p-4">
 
-        <h1><?= $row['information']; ?></h1>  
-    
-        <video width="320" height="240" controls>
-            <source src="../uploads/<?= $row['fichier']; ?>" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <h2 class="text-light p-3 mt-3 text-center"><?= $row['nom']; ?></h2>
+        
+        <div class="d-flex justify-content-center">
+            
+            <video width="380" height="240" controls class="p-3">
+                <source src="../uploads/<?= $row['fichier']; ?>" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <p class="text-light p-4 text-justify">
+                <?= $row['information']; ?> <br><br>
+                <a href="index.php" class="text-light font-italic"><-- Return :)</a>
+            </p>
+
+
+        </div>
+
+        
+        
+
+        
+        
+
     </div>
 
 </main>
+
+
