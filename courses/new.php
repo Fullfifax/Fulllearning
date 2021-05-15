@@ -44,6 +44,8 @@ $matieres = $stm->fetchAll(PDO::FETCH_ASSOC);
         <div class="py-5 bg-dark text-light">
             
             <div class="container">
+            
+                <h1 class="mb-4">Adding new course :)</h1>
 
                 <form method="post" enctype="multipart/form-data" action="">
 
@@ -71,7 +73,7 @@ $matieres = $stm->fetchAll(PDO::FETCH_ASSOC);
                     </div>
 
                     <div class="form-group">
-                        <label for="file">File</label>
+                        <label for="file">New video</label>
                         <input type="file" class="form-control-file" name="file" id="file" required>
                     </div>
                     <button type="submit" class="btn" style="background-color: grey">Add</button>
