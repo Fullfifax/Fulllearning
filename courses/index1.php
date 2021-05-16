@@ -25,7 +25,6 @@ $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
                     <h5 class="card-title text-center"><?= $row['nom']; ?></h5>
                     <p class="card-text text-justify"><?php echo substr($row['information'], 0, 150)."..."; ?></p>
                     <a href="show1.php?id=<?=$row['id'];?>" class="btn btn-light text-dark">Watch video</a>
-                    <a href="delete.php?id=<?= $row['id']; ?>" class="btn btn-danger text-light ml-4">Delete</a>
                 </div>
             </div>
         </div>
