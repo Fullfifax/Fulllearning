@@ -3,7 +3,7 @@
        <a class="text-dark" href="index.php"><?= WEBSITE_NAME; ?> </a> 
     </h5>
     <nav class="my-2 my-md-0 mr-md-3">
-        <?php if(isset($_SESSION['username'])) { ?>
+        <?php if(isset($_SESSION['user_id'])) { ?>
             <a class="p-2 text-dark" href="new.php">Add new course</a>
             <a class="p-2 text-dark" href="index.php">Watch courses</a>
             <a class="p-2 text-dark" href="../logout.php">Logout</a>
