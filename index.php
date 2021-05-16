@@ -1,4 +1,7 @@
 <?php 
+
+$title = "Index";
+
 require("includes/constants.php");
 require_once("includes/_header.php"); 
 require_once("includes/_nav.php");
