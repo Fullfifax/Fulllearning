@@ -1,4 +1,7 @@
 <?php 
+
+$title = "Register";
+
 require_once("includes/_header.php"); 
 require_once("includes/_nav.php");
 ?>
