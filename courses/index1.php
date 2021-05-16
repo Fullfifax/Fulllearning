@@ -3,6 +3,8 @@ session_start();
 
 include("../filters/student_filter.php");
 
+$title = "Index(student)";
+
 require("../includes/constants.php");
 require_once('../config/database.php');
 require_once("../includes/_header.php"); 
