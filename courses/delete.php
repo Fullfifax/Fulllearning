@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+
+include("../filters/teacher_filter.php");
+
 require_once("../includes/constants.php");
 require_once("../config/database.php");
 
