@@ -3,6 +3,8 @@ session_start();
 
 include("../filters/teacher_filter.php");
 
+$title = "Show course";
+
 require_once('../includes/constants.php');
 require_once('../config/database.php');
 require_once('../includes/_header.php');
