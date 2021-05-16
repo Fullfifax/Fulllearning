@@ -46,10 +46,9 @@ $verifyUserError = "";
                 $user = $stm->fetch(PDO::FETCH_ASSOC);
 
                 if(password_verify($_POST['password'], $user['password'])){
-                    $_SESSION['user_id'] = $user['id_ens'];
                     session_start();
-                    $_SESSION['username'] = $_POST['username'];
-                    header('Location: courses/index.php?id='.$user['id_ens']);
+                    $_SESSION['user_id'] = $user['id_ens'];
+                    header('Location: courses/index.php?idEs='.$user['id_ens']);
                     exit();
                 } else {
                     $verifyUserError = "Vérifiez votre username ou mot de passe !";
@@ -62,10 +61,9 @@ $verifyUserError = "";
                 $user = $stm->fetch(PDO::FETCH_ASSOC);
 
                 if(password_verify($_POST['password'], $user['password'])){
-                    $_SESSION['user_id'] = $user['id_etu'];
                     session_start();
-                    $_SESSION['username'] = $_POST['username'];
-                    header('Location: courses/index.php?id='.$user['id_etu']);
+                    $_SESSION['user_id1'] = $user['id_etu'];
+                    header('Location: courses/index1.php?idEs='.$user['id_etu']);
                     exit();
                 } else {
                     $verifyUserError = "Vérifiez votre username ou mot de passe !";
