@@ -34,7 +34,7 @@ if($_GET){
 
             <p class="text-light p-4 text-justify">
                 <?= $row['information']; ?> <br><br>
-                <a href="index.php" class="text-light font-italic"><-- Return :)</a>
+                <a href="index.php?id=<?=$_SESSION['user_id']; ?>" class="text-light font-italic"><-- Return :)</a>
             </p>
 
 
